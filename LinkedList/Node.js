@@ -20,11 +20,13 @@ class Node {
     }
 }
 
-const firstNode = new Node('First Node!');
-const secondNode = new Node('Second Node!');
+module.exports = Node;
 
-console.log(firstNode.getNextNode());
+// const firstNode = new Node('First Node!');
+// const secondNode = new Node('Second Node!');
 
-firstNode.setNextNode(secondNode);
+// console.log(firstNode.getNextNode());
 
-console.log(firstNode.getNextNode());
+// firstNode.setNextNode(secondNode);
+
+// console.log(firstNode.getNextNode());

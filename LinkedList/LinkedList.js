@@ -1,5 +1,6 @@
+const Node = require('./Node')
 class LinkedList {
-    constructor(data) {
+    constructor() {
         this.head = null;
     }    
 
@@ -7,4 +8,12 @@ class LinkedList {
     // addTail
     // removeHead
 
+    addHead(data) {
+        let currentHead = this.head;
+        let newHead = new Node(data);
+        this.head = newHead;
+        if (currentHead) {
+            this.head.setNextNode(currentHead)
+        }
+    }
 }
