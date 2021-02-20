@@ -12,15 +12,31 @@ class LinkedList {
         let newHead = new Node(data);
         this.head = newHead;
         if (currentHead) {
-            currentHead.setNextNode(currentHead)
+            this.head.setNextNode(currentHead)
+        }
+    }
+
+    addTail(data) {
+        let currentNode = this.head;
+        let newTail = new Node(data)
+
+        if (!currentNode) {
+            this.addHead(data)
+        }
+
+        while (currentNode) {
+            if (currentNode.getNextNode() === null) {
+                this.head.setNextNode(newTail)
+            }
+            currentNode = currentNode.getNextNode()
         }
     }
 
     printList() {
         let currentNode = this.head;
-        let output = '<head> ';
-        while (currentNode !== null) {
-          output += currentNode.data + ' ';
+        let output = '<head> ==> ';
+        while (currentNode) {
+          output += currentNode.data + ' --> ';
           currentNode = currentNode.getNextNode();
         }
         output += '<tail>';
@@ -31,7 +47,8 @@ class LinkedList {
 let linkedList = new LinkedList();
 
 
-linkedList.addHead('First head on the list!');
-linkedList.addHead("Now I'm the head, the second one");
+linkedList.addHead("I'm the tail!");
+linkedList.addHead("I'm the head!");
+linkedList.addHead("I'm the head! 2 2");
+linkedList.addTail("I'm TAILLLLLL");
 linkedList.printList();
-
