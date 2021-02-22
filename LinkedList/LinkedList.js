@@ -16,6 +16,16 @@ class LinkedList {
         }
     }
 
+    removeHead() {
+        let removedHead = this.head;
+        if (removedHead) {
+            this.head = this.head.getNextNode();
+            return console.log(`'${removedHead.data}' was removed from the head.`)
+        } else {
+            console.log('No head to remove!')
+        }
+    }
+
     addTail(data) {
         let tail = this.head;
         let newTail = new Node(data);
@@ -86,4 +96,7 @@ linkedList.addHead("PSYCH! I'm the head now!!!");
 linkedList.printList();
 linkedList.addTail("I'm the TAIL!!");
 linkedList.printList();
+linkedList.removeHead();
+linkedList.printList();
+
 
