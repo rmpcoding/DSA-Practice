@@ -1,7 +1,7 @@
 const Node = require('./Node');
 class LinkedList {
-    constructor() {
-        this.head = null;
+    constructor(head = null) {
+        this.head = head;
     }
 
     // addTail
@@ -17,24 +17,22 @@ class LinkedList {
     }
 
     addTail(data) {
-        let currentNode = this.head;
+        let tail = this.head;
         let newTail = new Node(data)
 
-        if (!currentNode) {
+        if (!tail) {
             this.addHead(data)
-        }
-
-        while (currentNode) {
-            if (currentNode.getNextNode() === null) {
-                this.head.setNextNode(newTail)
+        } else {
+            while(tail.getNextNode()) {
+                tail = tail.getNextNode();
             }
-            currentNode = currentNode.getNextNode()
+            tail.setNextNode(newTail)
         }
     }
 
     printList() {
-        let currentNode = this.head;
-        let output = '<head> ==> ';
+        let currentNode = this.head;6
+        let output = '<head> ';
         while (currentNode) {
           output += currentNode.data + ' --> ';
           currentNode = currentNode.getNextNode();
@@ -48,7 +46,11 @@ let linkedList = new LinkedList();
 
 
 linkedList.addHead("I'm the tail!");
-linkedList.addHead("I'm the head!");
-linkedList.addHead("I'm the head! 2 2");
-linkedList.addTail("I'm TAILLLLLL");
 linkedList.printList();
+linkedList.addHead("I'm the head!");
+linkedList.printList();
+linkedList.addHead("I'm the head! 2 2");
+linkedList.printList();
+linkedList.addTail("I'm the Tail!");
+linkedList.printList();
+
