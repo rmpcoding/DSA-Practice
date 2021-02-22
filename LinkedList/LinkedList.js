@@ -34,6 +34,19 @@ class LinkedList {
         this.head = null;
     }
 
+    getSize() {
+        let count = 1;
+        let currentNode = this.head;
+
+        if (currentNode) {
+            while(currentNode.getNextNode()) {
+                currentNode = currentNode.getNextNode();
+                count++
+            }
+            console.log(count);
+        } else console.log('Linked List is empty!')
+    }
+
     printList() {
         let currentNode = this.head;6
         let output = '<head> ';
@@ -48,7 +61,7 @@ class LinkedList {
 
 let linkedList = new LinkedList();
 
-
+linkedList.getSize()
 linkedList.addHead("I'm the tail!");
 linkedList.printList();
 linkedList.addHead("I'm the head!");
@@ -57,6 +70,7 @@ linkedList.addHead("I'm the head! 2 2");
 linkedList.printList();
 linkedList.addTail("I'm the Tail!");
 linkedList.printList();
+linkedList.getSize();
 linkedList.clear();
 linkedList.printList();
 
