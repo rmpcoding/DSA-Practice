@@ -30,6 +30,10 @@ class LinkedList {
         }
     }
 
+    clear() {
+        this.head = null;
+    }
+
     printList() {
         let currentNode = this.head;6
         let output = '<head> ';
@@ -52,5 +56,7 @@ linkedList.printList();
 linkedList.addHead("I'm the head! 2 2");
 linkedList.printList();
 linkedList.addTail("I'm the Tail!");
+linkedList.printList();
+linkedList.clear();
 linkedList.printList();
 
