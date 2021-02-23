@@ -99,6 +99,7 @@ linkedList.printList();
 linkedList.removeHead();
 linkedList.printList();
 linkedList.clear();
-linkedList.addTail("I'm the TAIL!!");
+linkedList.addTail("I'm the tail, but also a head!!");
+linkedList.printList();
 
 
