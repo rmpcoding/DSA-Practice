@@ -98,5 +98,7 @@ linkedList.addTail("I'm the TAIL!!");
 linkedList.printList();
 linkedList.removeHead();
 linkedList.printList();
+linkedList.clear();
+linkedList.addTail("I'm the TAIL!!");
 
 
