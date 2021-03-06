@@ -9,7 +9,7 @@ class LinkedList {
         let currentHead = this.head;
         let newHead = new Node(data);
         this.head = newHead;
-        
+
         if (currentHead) {
             this.head.setNextNode(currentHead);
         }
@@ -17,13 +17,11 @@ class LinkedList {
 
     removeHead() {
         let removedHead = this.head;
-        let newHead = removedHead.getNextNode()
-        if (removedHead) {
-            this.head.setNextNode(newHead);
-            console.log(`${removedHead} was removed as the head, and ${newHead} is now the new head!`)
-        } else {
-            console.log('There is no head to remove!')
+        if (!removedHead) {
+            return;
         }
+        this.head = removedHead.getNextNode();
+        return removedHead.data;
     }
 
     addTail(data) {
@@ -31,12 +29,12 @@ class LinkedList {
         let newTail = new Node(data);
 
         if (!tail) {
-            this.addHead(newTail)
+            this.addHead(newTail);
         } else {
-            while(tail.getNextNode()) {
+            while (tail.getNextNode()) {
                 tail = tail.getNextNode();
             }
-            tail = tail.setNextNode(newTail)
+            tail = tail.setNextNode(newTail);
         }
     }
 }
