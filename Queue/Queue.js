@@ -1,14 +1,21 @@
 const LinkedList = require('./LinkedList');
 
 class Queue {
-    constructor() {
+    constructor(maxSize = Infinity) {
         // Queue has the Queue itself as a property, which is actually a LinkedList
         this.queue = new LinkedList();
         // Queue has a size property
         this.size = 0;
         // Queue has a maxSize property
             // Defines whether Queue is bounded or not
-        this.maxSize = Infinity;
+        this.maxSize = maxSize;
+    }
+
+    hasRoom() {
+        if (this.size < this.maxSize) {
+            return true;
+        }
+        return false;
     }
 
     // Methods by which we manipulate the Queue
