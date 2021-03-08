@@ -7,7 +7,7 @@ class Queue {
         // Queue has a size property
         this.size = 0;
         // Queue has a maxSize property
-            // Defines whether Queue is bounded or not
+        // Defines whether Queue is bounded or not
         this.maxSize = maxSize;
     }
 
@@ -20,29 +20,32 @@ class Queue {
     }
 
     // Methods by which we manipulate the Queue
-        // Enqueue
-        enqueue(data) {
-            this.queue.addTail(data);
-            this.size++;
-            console.log(`'${data}' was added to the queue! The queue is now ${this.size}`)
-        }
-        // Dequeue
-        dequeue() {
+    // Enqueue
+    enqueue(data) {
+        this.queue.addTail(data);
+        this.size++;
+        console.log(
+            `'${data}' was added to the queue! The queue is now ${this.size}`
+        );
+    }
+    // Dequeue
+    dequeue() {
+        if (!this.isEmpty()) {
             const dequeue = this.queue.removeHead();
-            this.size--;            
-            console.log(`'${dequeue}' was removed from the queue!`)
+            this.size--;
+            console.log(`'${dequeue}' was removed from the queue!`);
             return dequeue;
-        }
-        // Peek
-
+        } else throw new Error('Queue is empty!');
+    }
+    // Peek
 }
 
-let queue = new Queue;
+let queue = new Queue();
 
-queue.enqueue('data here')
+queue.enqueue('data here');
 
-console.log(queue)
+console.log(queue);
 
 queue.dequeue();
 
-console.log(queue)
+console.log(queue);
