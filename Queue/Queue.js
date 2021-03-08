@@ -18,6 +18,13 @@ class Queue {
         return false;
     }
 
+    isEmpty() {
+        if (!this.size) {
+            return true;
+        }
+        return false;
+    }
+
     // Methods by which we manipulate the Queue
         // Enqueue
         enqueue(data) {
