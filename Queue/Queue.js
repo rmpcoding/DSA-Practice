@@ -12,17 +12,11 @@ class Queue {
     }
 
     hasRoom() {
-        if (this.size < this.maxSize) {
-            return true;
-        }
-        return false;
+        return this.size < this.maxSize;
     }
 
     isEmpty() {
-        if (!this.size) {
-            return true;
-        }
-        return false;
+        return this.size === 0;
     }
 
     // Methods by which we manipulate the Queue
