@@ -1,6 +1,6 @@
 const LinkedList = require('./LinkedList');
 
-class Queue {
+class Stack {
     constructor() {
 
     }
