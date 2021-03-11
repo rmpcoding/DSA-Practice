@@ -17,8 +17,12 @@ class LinkedList {
             this.head.setNextNode(currentHead)
         }
     }
+
+
 }
 
 let first = new LinkedList();
 first.addHead('This is first data passed in');
 console.log(first);
+
+module.exports = LinkedList;
