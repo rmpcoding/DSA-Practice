@@ -45,7 +45,3 @@ let queue = new Queue();
 queue.enqueue('data here');
 
 console.log(queue);
-
-queue.dequeue();
-
-console.log(queue);
