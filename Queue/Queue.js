@@ -22,11 +22,13 @@ class Queue {
     // Methods by which we manipulate the Queue
     // Enqueue
     enqueue(data) {
-        this.queue.addTail(data);
-        this.size++;
-        console.log(
-            `'${data}' was added to the queue! The queue is now ${this.size}`
-        );
+        if (this.hasRoom()) {
+            this.queue.addTail(data);
+            this.size++;
+            console.log(
+                `'${data}' was added to the queue! The queue is now ${this.size}`
+            );
+        } else throw new Error(`The Queue has no more room to add new data!`)
     }
     // Dequeue
     dequeue() {
@@ -41,7 +43,5 @@ class Queue {
 }
 
 let queue = new Queue();
-
-queue.enqueue('data here');
 
 console.log(queue);
