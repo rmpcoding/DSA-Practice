@@ -39,6 +39,7 @@ class Queue {
             return dequeue;
         } else throw new Error('Queue is empty!');
     }
+    
     // Peek
 }
 

@@ -48,13 +48,13 @@ class LinkedList {
     }
 }
 
-let first = new LinkedList();
-first.addHead('This is first data passed in');
-first.printList();
-first.addTail('NEXT');
-first.printList();
-first.removeHead();
-first.printList();
+// let first = new LinkedList();
+// first.addHead('This is first data passed in');
+// first.printList();
+// first.addTail('NEXT');
+// first.printList();
+// first.removeHead();
+// first.printList();
 
 module.exports = LinkedList;
 
