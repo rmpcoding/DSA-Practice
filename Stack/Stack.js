@@ -26,7 +26,15 @@ class Stack {
             console.log(
                 `'${data}' was added to the stack! The stack is now ${this.size}`
             );
-        } else throw new Error('Stack overflow!')
+        } else throw new Error('Stack overflow!');
+    }
+
+    pop() {
+        if (!this.isEmpty()) {
+            const value = this.stack.removeHead();
+            this.size--;
+            return value;
+        } else throw new Error(`Stack is empty!`);
     }
 }
 
@@ -34,4 +42,4 @@ let stack = new Stack();
 
 stack.push('Some Data!');
 
-console.log(stack.peek())
+console.log(stack.peek());
