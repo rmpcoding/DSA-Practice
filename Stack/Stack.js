@@ -15,6 +15,10 @@ class Stack {
         return this.size === 0;
     }
 
+    peek() {
+        return this.stack.head.data;
+    }
+
     push(data) {
         if (this.hasRoom()) {
             this.stack.addHead(data);
@@ -26,8 +30,8 @@ class Stack {
     }
 }
 
-// let stack = new Stack();
+let stack = new Stack();
 
-// stack.push('Some Data!');
+stack.push('Some Data!');
 
-// console.log(stack)
+console.log(stack.peek())
