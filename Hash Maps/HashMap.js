@@ -10,9 +10,12 @@ class HashMap {
             hashCode += hashCode + key.charCodeAt(i);
         }
 
-        hashCode = hashCode % this.hashmap.length;
+        return hashCode % this.hashmap.length;
+    }
 
-        return hashCode;
+    assign(key, value) {
+        const arrayIndex = this.hash(key);
+        this.hashmap[arrayIndex] = value;
     }
 }
 
