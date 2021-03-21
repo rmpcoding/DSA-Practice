@@ -24,8 +24,4 @@ class HashMap {
     }
 }
 
-const myHash = new HashMap(6)
-
-console.log(myHash.hash('hello'))
-
 module.export = HashMap;
