@@ -8,25 +8,32 @@ class LinkedList {
     // addHead
 
     addHead(data) {
-        // let new head become a member of Node class; set as const
-        // let current head equal this head
-        // if head exists
-            // make new head's next node equal to current head node
-        // or else
-            // this head will be equal to new head
-
         let newHead = new Node(data);
         let previousHead = this.head;
-        
         this.head = newHead;
 
         if (previousHead) {
             this.head.setNextNode(previousHead);
         } 
-        
     }
 
     // addTail
+
+    addTail(data) {
+        let newTail = new Node(data);
+        let currentNode = this.head;
+
+        if (!currentNode) {
+            this.addHead(newTail);
+            return;
+        } 
+
+        while (currentNode.getNextNode()) {
+            currentNode = currentNode.getNextNode();
+        }
+
+        currentNode.setNextNode(newTail);
+    }
     // removeHead
 
 
