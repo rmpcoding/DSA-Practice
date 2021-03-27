@@ -36,5 +36,15 @@ class LinkedList {
     }
     // removeHead
 
+    removeHead() {
+        let removedHead = this.head;
+
+        if (!removedHead) {
+            return console.log("No head exists for this LinkedList!")
+        }
+
+        this.head = this.head.getNextNode()
+        console.log(`${this.head} is now the new head!`)
+    }
 
 }
