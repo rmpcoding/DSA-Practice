@@ -5,8 +5,6 @@ class LinkedList {
         this.head = null;
     }
 
-    // addHead
-
     addHead(data) {
         let newHead = new Node(data);
         let previousHead = this.head;
@@ -16,8 +14,6 @@ class LinkedList {
             this.head.setNextNode(previousHead);
         } 
     }
-
-    // addTail
 
     addTail(data) {
         let newTail = new Node(data);
@@ -34,7 +30,6 @@ class LinkedList {
 
         currentNode.setNextNode(newTail);
     }
-    // removeHead
 
     removeHead() {
         let removedHead = this.head;
@@ -48,3 +43,5 @@ class LinkedList {
     }
 
 }
+
+modules.export = LinkedList;
