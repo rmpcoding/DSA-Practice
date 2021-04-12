@@ -1,12 +1,11 @@
+// class TreeNode
+    // Needs to have two properties
+        // data passed in as a parameter
+        // children as an array
 class TreeNode {
     constructor(data) {
         this.data = data;
-        this.children= [];
+        this.children = [];
     }
-
-    // addChild method
-    // removeChild method
-    // depthFirstTraversal (recursive) method
-    // breadthFirstTraversal method
 
 }
