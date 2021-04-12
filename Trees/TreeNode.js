@@ -8,4 +8,11 @@ class TreeNode {
         this.children = [];
     }
 
+    addChild(node) {
+        if (node instanceof TreeNode || null) {
+            this.children.push(node);
+        } else {
+            this.children.push(new TreeNode(node))
+        }
+    }
 }
