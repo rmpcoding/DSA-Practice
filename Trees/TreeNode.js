@@ -25,3 +25,4 @@ class TreeNode {
         this.children.forEach((child) => child.print(level + 1));
     }
 }
+console.log('YouTube'.substring(1))
