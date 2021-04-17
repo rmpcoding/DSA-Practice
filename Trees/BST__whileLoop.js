@@ -1,4 +1,4 @@
-class TreeNode {
+class BinarySearchTreeNode {
     constructor(data) {
         this.data = data;
         this.left = null;
@@ -42,14 +42,14 @@ class BinarySearchTree {
     lookupNode(node) {}
 }
 
-const tree = new BinarySearchTree();
+const BST = new BinarySearchTree();
 
-tree.insertNode(9);
-tree.insertNode(4);
-tree.insertNode(6);
-tree.insertNode(20);
-tree.insertNode(170);
-tree.insertNode(15);
-tree.insertNode(1);
+BST.insertNode(9);
+BST.insertNode(4);
+BST.insertNode(6);
+BST.insertNode(20);
+BST.insertNode(170);
+BST.insertNode(15);
+BST.insertNode(1);
 
-console.log(JSON.stringify(tree));
+console.log(JSON.stringify(BST));
