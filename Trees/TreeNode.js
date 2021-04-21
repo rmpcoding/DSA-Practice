@@ -12,6 +12,21 @@ class TreeNode {
         }
     }
 
+    removeAChild(node) {
+        const length = this.children.length;
+
+        this.children = this.children.filter((child) => {
+            return node instanceof TreeNode
+                ? child !== node
+                : child.data !== node;
+        });
+
+        if (length === this.children.length)
+            this.children.forEach((child) => {
+                child.removeAChild(node);
+            });
+    }
+
     removeChild(node) {
         // keep original length of our array by
         // creating a const of the children's array length
@@ -28,9 +43,9 @@ class TreeNode {
         const length = this.children.length;
 
         this.children = this.children.filter((child) => {
-            node instanceof TreeNode ? 
-              child !== node : 
-              child.data !== node;
+            return node instanceof TreeNode
+                ? child !== node
+                : child.data !== node;
         });
 
         if (length === this.children.length) {
@@ -38,6 +53,23 @@ class TreeNode {
                 child.removeChild(node);
             });
         }
+    }
+
+    breadthFirstTraversal() {
+        let queue = [this];
+        console.log(queue)
+        while (queue.length > 0) {
+            const current = queue.shift();
+            console.log(current.data);
+            queue = queue.concat(current.children)
+        }
+    }
+
+    depthFirstTraversal() {
+        this.children.forEach((child) => {
+            console.log(this.data);
+            child.depthFirstTraversal();
+        });
     }
 
     print(level = 0) {
@@ -53,17 +85,16 @@ class TreeNode {
 const tree = new TreeNode(1);
 
 tree.addChild(15);
-const node = new TreeNode(30);
-tree.addChild(node);
+tree.addChild(30);
+
+// tree.removeChild(15);
 
 console.log(tree);
 
-tree.removeChild(15);
-
-console.log(tree);
-
-tree.removeChild(node);
-
-console.log(tree);
+// tree.removeChild(node);
 
 tree.print();
+console.log('======================================');
+tree.depthFirstTraversal();
+console.log('======================================');
+tree.breadthFirstTraversal();
