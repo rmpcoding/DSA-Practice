@@ -9,7 +9,11 @@ function addNumbersForLoop(num) {
     return total;
 }
 
-console.log(addNumbersForLoop(60000000));
+function addNumbersConstant(n) {
+    return (n * (n + 1)) / 2;
+}
+
+console.log(addNumbersConstant(600000000));
 
 const difference = process.hrtime(time);
 
