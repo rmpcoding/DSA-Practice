@@ -12,38 +12,37 @@ class BST_Practice1 {
     }
 
     insert(node) {
-        let instantiatedNode = new TreeNodePractice1(node);
+        let instantiatedNode;
 
-        // if (node instanceof TreeNodePractice1 === false) {
-        //     node = new TreeNodePractice1(node)
-        //     // console.log(node)
-        // }
+        if (node instanceof TreeNodePractice1 === false) {
+            instantiatedNode = new TreeNodePractice1(node);
+        } else {
+            instantiatedNode = node;
+        }
 
         if (!this.root) {
             this.root = instantiatedNode;
+            console.log(this)
             return;
         }
 
-        // iteratively
-
         let current = this.root;
-        console.log(this.root);
 
         while (true) {
-            if (instantiatedNode.value < this.root.value) {
-                if (current.left) {
-                    current = current.left;
-                } else {
+            if (instantiatedNode.value === current.value) return undefined
+            if (instantiatedNode.value < current.value) {
+                if (!current.left) {
                     current.left = instantiatedNode;
-                    return;
+                    console.log(this)
+                    return this;
                 }
+                current = current.left;
             } else {
-                if (current.right) {
-                    current = current.right;
-                } else {
+                if (!current.right) {
                     current.right = instantiatedNode;
                     return;
                 }
+                current = current.right;
             }
         }
     }
@@ -58,6 +57,7 @@ tree.insert(27);
 tree.insert(15);
 tree.insert(125);
 tree.insert(225);
+tree.insert(220);
 tree.insert(525);
 
 console.log(JSON.stringify(tree));
