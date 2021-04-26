@@ -1,4 +1,4 @@
-class BinarySearchTreeNode {
+class BST_Node_00 {
     constructor(data) {
         this.data = data;
         this.left = null;
@@ -6,13 +6,13 @@ class BinarySearchTreeNode {
     }
 }
 
-class BinarySearchTree {
+class BinarySearchTree_00 {
     constructor() {
         this.root = null;
     }
 
     insertNode(node) {
-        let instantiatedNode = new TreeNode(node);
+        let instantiatedNode = new BST_Node_00(node);
 
         if (this.root === null) {
             this.root = instantiatedNode;
@@ -42,7 +42,7 @@ class BinarySearchTree {
     lookupNode(node) {}
 }
 
-const BST = new BinarySearchTree();
+const BST = new BinarySearchTree_00();
 
 BST.insertNode(9);
 BST.insertNode(4);

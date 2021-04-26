@@ -1,4 +1,4 @@
-class TreeNodePractice1 {
+class BST_Node_01 {
     constructor(value) {
         this.value = value;
         this.left = null;
@@ -6,7 +6,7 @@ class TreeNodePractice1 {
     }
 }
 
-class BST_Practice1 {
+class BinarySearchTree_01 {
     constructor() {
         this.root = null;
     }
@@ -14,8 +14,8 @@ class BST_Practice1 {
     insert(node) {
         let instantiatedNode;
 
-        if (node instanceof TreeNodePractice1 === false) {
-            instantiatedNode = new TreeNodePractice1(node);
+        if (node instanceof BST_Node_01 === false) {
+            instantiatedNode = new BST_Node_01(node);
         } else {
             instantiatedNode = node;
         }
@@ -48,7 +48,7 @@ class BST_Practice1 {
     }
 }
 
-let tree = new BST_Practice1();
+let tree = new BinarySearchTree_01();
 
 tree.insert(100);
 tree.insert(50);
