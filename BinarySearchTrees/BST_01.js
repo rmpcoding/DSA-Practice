@@ -11,6 +11,39 @@ class BinarySearchTree_01 {
         this.root = null;
     }
 
+
+    find(node) {
+        // return boolean  
+        // if there is a root
+            // if not, search is over;
+        // if there is a root, check if node is equal to root's value
+            // if so, search is over;
+        // create variable current set equal to this root
+        // create a while loop
+            // while true
+        // if there is a root, check if node is greater than root
+            // if it is greater
+                // check to see if there is a node to the right;
+                // if so, current will be current's right node
+                // if not, add that node as current's right node
+            // if it is less
+                // check to see if there is a node to the left;
+                // if so, move to that node and commence new iteration
+                // if not, that's our node;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     insert(node) {
         let instantiatedNode;
 
