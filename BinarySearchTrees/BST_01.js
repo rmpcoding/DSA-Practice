@@ -12,7 +12,7 @@ class BinarySearchTree_01 {
     }
 
     find(node) {
-        if (!this.root) return false;
+        if (!this.root && this.root !== 0) return false;
         if (!(node instanceof BST_Node_01)) node = new BST_Node_01(node);
         if (this.root.value === node.value) return true;
 
@@ -66,24 +66,49 @@ class BinarySearchTree_01 {
             }
         }
     }
+
+    breadthFirstSearch() {
+        const queue = [this.root];
+        let visitedNodes = [];
+        let current;
+
+        while (queue.length) {
+            current = queue.shift();
+            visitedNodes.push(current.value);
+
+            if (current.left) queue.push(current.left);
+            if (current.right) queue.push(current.right);
+        }
+        return visitedNodes;
+    }
 }
 
 let tree = new BinarySearchTree_01();
 
-tree.insert(100);
-tree.insert(10);
-tree.insert(75);
-tree.insert(125);
-tree.insert(110);
+// tree.insert(100);
+// tree.insert(10);
+// tree.insert(75);
 // tree.insert(125);
+// tree.insert(110);
 // tree.insert(225);
 // tree.insert(220);
 // tree.insert(525);
 
-console.log(tree.find(100))
-console.log(tree.find(10))
-console.log(tree.find(75))
-console.log(tree.find(125))
-console.log(tree.find(110))
+tree.insert(10)
+tree.insert(6)
+tree.insert(15)
+tree.insert(3)
+tree.insert(8)
+tree.insert(20)
+
+// console.log(tree.find(100));
+// console.log(tree.find(10));
+// console.log(tree.find(75));
+// console.log(tree.find(125));
+// console.log(tree.find(110));
+
+// console.log(tree.breadthFirstSearch())
+// tree.breadthFirstSearch();
+console.log(tree.breadthFirstSearch());
 
 // console.log(JSON.stringify(tree));

@@ -3,7 +3,6 @@ class Node {
         this.data = data;
         this.next = null;
     }
-
     // getNextNode()
     getNextNode() {
         return this.next;
