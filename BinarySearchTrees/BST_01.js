@@ -67,15 +67,40 @@ class BinarySearchTree_01 {
         }
     }
 
+    // breadthFirstSearch() {
+    //     const queue = [this.root];
+    //     let visitedNodes = [];
+    //     let current;
+
+    //     while (queue.length) {
+    //         current = queue.shift();
+    //         visitedNodes.push(current.value);
+
+    //         if (current.left) queue.push(current.left);
+    //         if (current.right) queue.push(current.right);
+    //     }
+    //     return visitedNodes;
+    // }
+
+
     breadthFirstSearch() {
+        // create a queue with our tree root's value
+        // create an array to hold our visited nodes
+        // create a current node variable
+        // while the queue's length is greater than 0
+            // dequeue the current node and store it in a variable current
+            // push current into visited node's array
+            // if current node's left node exists
+                // push into queue
+            // if current node's right node exists
+                // push into queue
         const queue = [this.root];
-        let visitedNodes = [];
+        const visitedNodes = [];
         let current;
 
         while (queue.length) {
             current = queue.shift();
             visitedNodes.push(current.value);
-
             if (current.left) queue.push(current.left);
             if (current.right) queue.push(current.right);
         }
