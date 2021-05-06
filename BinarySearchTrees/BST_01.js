@@ -82,19 +82,32 @@ class BinarySearchTree_01 {
     //     return visitedNodes;
     // }
 
+    // breadthFirstSearch() {
+    //     // create a queue with our tree root's value
+    //     // create an array to hold our visited nodes
+    //     // create a current node variable
+    //     // while the queue's length is greater than 0
+    //         // dequeue the current node and store it in a variable current
+    //         // push current into visited node's array
+    //         // if current node's left node exists
+    //             // push into queue
+    //         // if current node's right node exists
+    //             // push into queue
+    //     const queue = [this.root];
+    //     const visitedNodes = [];
+    //     let current;
+
+    //     while (queue.length) {
+    //         current = queue.shift();
+    //         visitedNodes.push(current.value);
+    //         if (current.left) queue.push(current.left);
+    //         if (current.right) queue.push(current.right);
+    //     }
+    //     return visitedNodes;
+    // }
 
     breadthFirstSearch() {
-        // create a queue with our tree root's value
-        // create an array to hold our visited nodes
-        // create a current node variable
-        // while the queue's length is greater than 0
-            // dequeue the current node and store it in a variable current
-            // push current into visited node's array
-            // if current node's left node exists
-                // push into queue
-            // if current node's right node exists
-                // push into queue
-        const queue = [this.root];
+        const queue = [ this.root ];
         const visitedNodes = [];
         let current;
 
@@ -110,21 +123,21 @@ class BinarySearchTree_01 {
 
 let tree = new BinarySearchTree_01();
 
-// tree.insert(100);
-// tree.insert(10);
-// tree.insert(75);
-// tree.insert(125);
-// tree.insert(110);
-// tree.insert(225);
-// tree.insert(220);
-// tree.insert(525);
+tree.insert(100);
+tree.insert(10);
+tree.insert(75);
+tree.insert(125);
+tree.insert(110);
+tree.insert(225);
+tree.insert(220);
+tree.insert(525);
 
-tree.insert(10)
-tree.insert(6)
-tree.insert(15)
-tree.insert(3)
-tree.insert(8)
-tree.insert(20)
+// tree.insert(10);
+// tree.insert(6);
+// tree.insert(15);
+// tree.insert(3);
+// tree.insert(8);
+// tree.insert(20);
 
 // console.log(tree.find(100));
 // console.log(tree.find(10));
