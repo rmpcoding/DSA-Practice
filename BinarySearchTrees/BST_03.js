@@ -56,7 +56,7 @@ BinarySearchTree02.prototype.find = function(node) {
     let current = this.root;
 
     while(true) {
-        if (current.value === node) return true;
+        if (current.value === node) return current;
         if (node < current.value) {
             if (!current.left) return false;
             current = current.left;
@@ -93,4 +93,4 @@ tree.insert(125)
 tree.insert(25)
 tree.insert(10)
 
-console.log(tree.find(9))
+console.log(tree.find(10))
