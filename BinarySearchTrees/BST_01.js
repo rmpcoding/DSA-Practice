@@ -32,82 +32,42 @@ class BinarySearchTree_01 {
     }
 
     insert(node) {
-        let instantiatedNode;
-
-        if (node instanceof BST_Node_01 === false) {
-            instantiatedNode = new BST_Node_01(node);
-        } else {
-            instantiatedNode = node;
-        }
-
-        if (!this.root) {
-            this.root = instantiatedNode;
-            // console.log(this)
-            return;
-        }
+        if (!(node instanceof BST_Node_01)) node = new BST_Node_01(node);
+        if (!this.root) this.root = node;
 
         let current = this.root;
 
         while (true) {
-            if (instantiatedNode.value === current.value) return undefined;
-            if (instantiatedNode.value < current.value) {
+            if (node.value === current.value) return undefined;
+            if (node.value < current.value) {
                 if (!current.left) {
-                    current.left = instantiatedNode;
-                    // console.log(this)
+                    current.left = node;
                     return this;
                 }
                 current = current.left;
             } else {
                 if (!current.right) {
-                    current.right = instantiatedNode;
-                    return;
+                    current.right = node;
+                    return this;
                 }
                 current = current.right;
             }
         }
     }
 
-    // breadthFirstSearch() {
-    //     const queue = [this.root];
-    //     let visitedNodes = [];
-    //     let current;
-
-    //     while (queue.length) {
-    //         current = queue.shift();
-    //         visitedNodes.push(current.value);
-
-    //         if (current.left) queue.push(current.left);
-    //         if (current.right) queue.push(current.right);
-    //     }
-    //     return visitedNodes;
-    // }
-
-    // breadthFirstSearch() {
-    //     // create a queue with our tree root's value
-    //     // create an array to hold our visited nodes
-    //     // create a current node variable
-    //     // while the queue's length is greater than 0
-    //         // dequeue the current node and store it in a variable current
-    //         // push current into visited node's array
-    //         // if current node's left node exists
-    //             // push into queue
-    //         // if current node's right node exists
-    //             // push into queue
-    //     const queue = [this.root];
-    //     const visitedNodes = [];
-    //     let current;
-
-    //     while (queue.length) {
-    //         current = queue.shift();
-    //         visitedNodes.push(current.value);
-    //         if (current.left) queue.push(current.left);
-    //         if (current.right) queue.push(current.right);
-    //     }
-    //     return visitedNodes;
-    // }
+    // create a queue with our tree root's value
+    // create an array to hold our visited nodes
+    // create a current node variable
+    // while the queue's length is greater than 0
+    // dequeue the current node and store it in a variable current
+    // push current into visited node's array
+    // if current node's left node exists
+    // push into queue
+    // if current node's right node exists
+    // push into queue
 
     breadthFirstSearch() {
-        const queue = [ this.root ];
+        const queue = [this.root];
         const visitedNodes = [];
         let current;
 
