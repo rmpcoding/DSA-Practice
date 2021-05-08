@@ -105,6 +105,18 @@ BinarySearchTree02.prototype.dfsPostOrder = function (current = this.root) {
     return storedNodes;
 };
 
+BinarySearchTree02.prototype.dfsInOrder = function (current = this.root) {
+    const storedNodes = [];
+
+    function traverse(node) {
+        if (node.left) traverse(node.left);
+        storedNodes.push(node.value);
+        if (node.right) traverse(node.right);
+    }
+    traverse(current);
+    return storedNodes;
+};
+
 let tree = new BinarySearchTree02();
 
 tree.insert(100);
@@ -116,6 +128,7 @@ tree.insert(125);
 tree.insert(115);
 tree.insert(110);
 
-console.log('Breadth First Search: ', tree.breadthFirstSearch())
+console.log('Breadth First Search: ', tree.breadthFirstSearch());
 console.log('DFS PreOrder: ', tree.dfsPreOrder());
 console.log('DFS PostOrder: ', tree.dfsPostOrder());
+console.log('DFS InOrder: ', tree.dfsInOrder());
