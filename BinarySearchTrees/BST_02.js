@@ -105,13 +105,13 @@ BinarySearchTree02.prototype.dfsInOrder = function (current = this.root) {
 let tree = new BinarySearchTree02();
 
 tree.insert(100);
-tree.insert(75);
 tree.insert(50);
+tree.insert(75);
 tree.insert(25);
 tree.insert(10);
-tree.insert(125);
 tree.insert(115);
 tree.insert(110);
+tree.insert(125);
 
 console.log('Breadth First Search: ', tree.breadthFirstSearch());
 console.log('DFS PreOrder: ', tree.dfsPreOrder());
