@@ -14,14 +14,18 @@ class MinHeap {
     }
 
     swap(a, b) {
-        this.heap[a], this.heap[b] = this.heap[b], this.heap[a]
+        this.heap[a], this.heap[b] = this.heap[b], this.heap[a];
     }
 
     bubbleUp() {
         let current = this.size;
 
-        while (this.heap[getParent(current)] > this.heap[current]) {
-
+        while (
+            current > 0 &&
+            this.heap[getParent(current)] > this.heap[current]
+        ) {
+            this.swap(current, getParent(current));
+            current = getParent(current);
         }
     }
 }
