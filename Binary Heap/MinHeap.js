@@ -14,7 +14,7 @@ class MinHeap {
     }
 
     swap(a, b) {
-        this.heap[a], this.heap[b] = this.heap[b], this.heap[a];
+        [this.heap[a], this.heap[b]] = [this.heap[b], this.heap[a]];
     }
 
     bubbleUp() {
