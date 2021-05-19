@@ -18,3 +18,5 @@ const swap = (array, indexOne, indexTwo) => {
     array[indexTwo] = array[indexOne];
     array[indexOne] = temp;
 }
+
+console.log(bubbleSort([1, 5, 2, 4, 3]))
