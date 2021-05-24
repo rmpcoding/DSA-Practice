@@ -11,6 +11,7 @@ class MinHeap {
     insert(value) {
         this.heap.push(value);
         this.size++;
+        this.bubbleUp();
     }
 
     swap(a, b) {
