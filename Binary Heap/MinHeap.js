@@ -13,6 +13,16 @@ class MinHeap {
         this.size++;
         this.bubbleUp();
     }
+    
+    popMin() {
+        if (!this.size) return null;
+
+        this.swap(1, this.size);
+        const min = this.heap.pop();
+        this.size--;
+        this.heapify(); // this doesn't exist yet
+        return min;
+    }
 
     swap(a, b) {
         [this.heap[a], this.heap[b]] = [this.heap[b], this.heap[a]];
