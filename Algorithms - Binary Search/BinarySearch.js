@@ -1,11 +1,11 @@
 const binarySearch = (array, target) => {
-    const left = 0;
-    const right = array.length;
+    let left = 0;
+    let right = array.length;
 
     while (right > left) {
         const indexToCheck = Math.floor((left + right) / 2);
-        const checking = arr[indexToCheck];
-        
+        const checking = array[indexToCheck];
+
         if (checking === target) return indexToCheck;
 
         if (checking < target) {
@@ -16,3 +16,11 @@ const binarySearch = (array, target) => {
     }
     return null;
 };
+
+
+const searchable = [1, 2, 7, 8, 22, 28, 41, 58, 67, 71, 94];
+const target = 41;
+
+targetIndex = binarySearch(searchable, target);
+
+console.log(`The target index is ${targetIndex}.`);
