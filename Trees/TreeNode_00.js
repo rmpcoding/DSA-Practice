@@ -4,6 +4,10 @@ class TreeNode {
         this.children = [];
     }
 
+    addAChild(node) {
+        if (!(node instanceof TreeNode)) this.children.push(new TreeNode(node));
+    }
+
     addChild(node) {
         if (node instanceof TreeNode) {
             this.children.push(node);
@@ -57,11 +61,11 @@ class TreeNode {
 
     breadthFirstTraversal() {
         let queue = [this];
-        console.log(queue)
+        console.log(queue);
         while (queue.length > 0) {
             const current = queue.shift();
             console.log(current.data);
-            queue = queue.concat(current.children)
+            queue = queue.concat(current.children);
         }
     }
 

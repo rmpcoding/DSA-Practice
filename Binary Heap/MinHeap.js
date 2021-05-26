@@ -20,7 +20,7 @@ class MinHeap {
         this.swap(0, this.size);
         const min = this.heap.pop();
         this.size--;
-        this.heapify(); // this doesn't exist yet
+        this.heapify();
         return min;
     }
 
