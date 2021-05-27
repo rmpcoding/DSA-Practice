@@ -9,5 +9,18 @@ class TreeNode_01 {
         this.children.push(value);
     }
 
-    
+    removeANode(node) {
+        const length = this.children.length;
+
+        this.children = this.children.filter((child) => {
+            return node instanceof TreeNode
+                ? child !== node
+                : child.data !== node;
+        });
+        
+        if (length === this.children.length)
+        this.children.forEach((child) => {
+            child.removeAChild(node);
+        });
+    }
 }
