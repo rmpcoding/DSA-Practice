@@ -3,8 +3,11 @@ class TreeNode_01 {
         this.value = value;
         this.children = [];
     }
-}
 
-class N_AryTree_01 {
+    addANode(value) {
+        if (!(value instanceof TreeNode_01)) value = new TreeNode_01(value);
+        this.children.push(value);
+    }
+
     
 }
