@@ -7,4 +7,5 @@ function pivot(array, left, right) {
 
 const array = [96, 3, 90, 13, 78, 18, 93, 75];
 
+console.log(random)
 console.log(pivot(array));
