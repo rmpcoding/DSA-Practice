@@ -1,4 +1,18 @@
 const binarySearch = (array, target) => {
+    // takes two arguments
+    // create variable for lower bound (0);
+    // create variable for upper bound (array.length);
+
+    // while upper bound is greater than lower bound
+        // create a variable indexToCheck (Math.floor((left + right)) / 2)
+        // create a variable checking (array[indexToCheck])
+        // if target equals checking return checking because that's our index
+        // if checking is less than target
+            // left is now equal to indexToCheck + 1
+        // else
+            // right is now equal to indexToCheck
+    // return null
+    
     let left = 0;
     let right = array.length;
 
