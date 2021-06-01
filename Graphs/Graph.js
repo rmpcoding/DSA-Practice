@@ -28,7 +28,6 @@ class Graph {
         vertexTwo.addEdge(vertexOne, edgeWeight);
     }
 
-    // removeEdge()
     removeEdge(vertexOne, vertexTwo) {
         if (!(vertexOne instanceof Vertex) || !(vertexTwo instanceof Vertex))
             throw new Error('Expected Vertex arguments');
@@ -37,12 +36,13 @@ class Graph {
         if (this.isDirected) return;
         vertexTwo.removeEdge(vertexOne);
     }
-    // getVertexByValue()
+
+    getVertexByValue(vertex) {
+        return this.vertices.find(v => v.data === vertex)
+    }
 }
 
 let graph = new Graph();
-
-graph.addVertex('hello');
 
 /* -------------------------------------------------------------------------- */
 /*                                 GRAPH CLASS                                */
