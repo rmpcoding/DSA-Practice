@@ -18,8 +18,16 @@ class Graph {
         this.vertices = this.vertices.filter((v) => v !== vertex);
     }
 
-    // removeVertex()
-    // addEdge()
+    addEdge(vertexOne, vertexTwo, weight) {
+        if (!(vertexOne instanceof Vertex) || !(vertexTwo instanceof Vertex))
+            throw new Error('Expected Vertex arguments');
+        const edgeWeight = this.isWeighted ? weight : null;
+
+        vertexOne.addEdge(vertexTwo, edgeWeight);
+        if (this.isDirected) return;
+        vertexTwo.addEdge(vertexOne, edgeWeight);
+    }
+
     // removeEdge()
     // getVertexByValue()
 }
