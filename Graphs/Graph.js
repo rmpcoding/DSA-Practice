@@ -14,6 +14,10 @@ class Graph {
         return vertex;
     }
 
+    removeVertex(vertex) {
+        this.vertices = this.vertices.filter((v) => v !== vertex);
+    }
+
     // removeVertex()
     // addEdge()
     // removeEdge()
