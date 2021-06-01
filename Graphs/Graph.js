@@ -1,7 +1,32 @@
+const Edge = require('./Edge');
+const Vertex = require('./Vertex');
+
+class Graph {
+    constructor(isWeighted = false, isDirected = false) {
+        this.vertices = [];
+        this.isWeighted = isWeighted;
+        this.isDirected = isDirected;
+    }
+
+    addVertex(data) {
+        let vertex = new Vertex(data);
+        this.vertices.push(vertex);
+        return vertex;
+    }
+
+    // removeVertex()
+    // addEdge()
+    // removeEdge()
+    // getVertexByValue()
+}
+
+let graph = new Graph();
+
+graph.addVertex('hello');
+
 /* -------------------------------------------------------------------------- */
 /*                                 GRAPH CLASS                                */
 /* -------------------------------------------------------------------------- */
-
 
 /* --------------------------------------------------------------------------
 
