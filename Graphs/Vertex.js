@@ -13,5 +13,8 @@ class Vertex {
         this.edges.push(new Edge(this, vertex, weight));
     }
     // removeEdge();
+    removeEdge(vertex) {
+        this.edges = this.edges.filter((edge) => edge.end !== vertex);
+    }
     // print();
 }
