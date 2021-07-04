@@ -23,7 +23,7 @@ console.log(singleNumber(mixArr));
 
     Another thing to try is to sort the array first and watch what happens, then move one of them out fo sequence. It's hard to build an intuition for it.
 */
-function getNthBit(num, n) {
+// function getNthBit(num, n) {
     // create variable checkBit 
         // left shift 1 over by n to set bit in proper position.
     // create variable andBit
@@ -31,4 +31,10 @@ function getNthBit(num, n) {
     // if checkBit matches andBit
         // return 1
     // else return 0.
-}
+// }
+
+// write a function to get the nth bit of a number.
+
+
+
+
