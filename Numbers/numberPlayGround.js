@@ -49,3 +49,6 @@ console.log(`
 Performance: ${performanceInNanoSeconds} nanoseconds
 Performance: ${seconds} seconds
 `);
+
+
+
