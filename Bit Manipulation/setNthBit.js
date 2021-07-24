@@ -15,8 +15,6 @@ function setNthBit(number, bitPosition) {
     return orBit;
 }
 
-setNthBit(3, 5);
-
 console.log(setNthBit(3, 5).toString(2))
 
 const setNthBitShort = (num, bit) => {
