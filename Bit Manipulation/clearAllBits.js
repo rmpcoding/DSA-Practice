@@ -1,8 +1,8 @@
-function clearAllBits(number) {
-    return ~number & number;
-}
+// function clearAllBits(number) {
+//     return ~number & number;
+// }
 
-console.log(clearAllBits(132).toString(2))
+// console.log(clearAllBits(132).toString(2))
 
 /*
 Clear all bits from any given number!
